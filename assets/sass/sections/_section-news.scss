@@ -1,0 +1,65 @@
+.section-news {
+  padding: $space-large 0;
+  background-color: $color-primary;
+  width: 100%;
+}
+
+.news__text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.news__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.news {
+  &__pagination {
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 0.8rem;
+    }
+
+    &--btn {
+      cursor: pointer;
+      display: inline-block;
+      border: none;
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 50%;
+    }
+
+    &--btn-active {
+      background-color: $color-white;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &__btn {
+    cursor: pointer;
+    background: none;
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 50%;
+    border: 1px solid $color-secondary;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--icon {
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+  }
+}

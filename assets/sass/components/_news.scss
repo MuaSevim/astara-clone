@@ -1,0 +1,80 @@
+.news {
+  &__container {
+    position: relative;
+
+    height: 60rem;
+    overflow: hidden;
+  }
+
+  &__track {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    display: flex;
+
+    transition: all 0.3s;
+  }
+
+  &__card {
+    display: block;
+    width: calc((100% - 2 * #{$news-col-space}) / 2);
+    padding: 0 calc(#{$news-col-space} / 2);
+
+    transition: all 0.75s;
+
+    @include respond(phone) {
+      width: 100%;
+    }
+
+    &:not(:first-child) {
+      width: 30rem;
+      width: calc((100% - 2 * #{$news-col-space}) / 4);
+
+      @include respond(tab-port) {
+        width: calc((100% - 2 * #{$news-col-space}) / 2);
+      }
+
+      @include respond(phone) {
+        width: 100%;
+      }
+    }
+
+    &--img-container {
+      height: 30rem;
+      border-radius: $border-radius-default;
+      overflow: hidden;
+      margin-bottom: 1.6rem;
+    }
+
+    &--img {
+      transform: scale(1.02);
+      height: 100%;
+    }
+
+    &--title {
+      font-size: 2rem;
+      font-weight: 600;
+      color: $color-secondary;
+      margin-bottom: 1.6rem;
+      line-height: 1.3;
+    }
+
+    &--content {
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: $color-secondary;
+    }
+
+    &--link-more {
+      &:link,
+      &:visited {
+        text-decoration: none;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: $color-secondary;
+      }
+    }
+  }
+}

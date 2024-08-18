@@ -1,0 +1,212 @@
+.nav {
+  background-color: $color-white;
+  width: 100%;
+
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 3.2rem;
+  }
+
+  &__logo {
+    display: inline-block;
+    height: 3.6rem;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+
+    list-style: none;
+    gap: 2.8rem;
+
+    @include respond(tab-port-large) {
+      gap: 1.6rem;
+    }
+
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      font-size: 1.6rem;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-block;
+      color: $color-secondary;
+      font-weight: 500;
+      padding: 0.8rem 0.4rem;
+      padding-top: 0;
+      border-bottom: 3px solid transparent;
+
+      transition: all 0.3s;
+    }
+
+    &:hover,
+    &:active {
+      border-bottom: 3px solid $color-primary;
+    }
+  }
+
+  &__seperator {
+    display: inline-block;
+    transform: scaleY(2);
+    font-weight: 600;
+    padding-bottom: calc(0.8rem);
+  }
+
+  &__lang--box {
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  &__lang {
+    padding-bottom: calc(0.8rem + 3px);
+    cursor: pointer;
+    background: none;
+    border: none;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: 600;
+
+    &:not(:last-child) {
+      margin-right: 1.6rem;
+    }
+  }
+
+  &__lang--active {
+    color: $color-primary;
+  }
+
+  &__mobile {
+    display: none;
+
+    &--btn {
+      cursor: pointer;
+      border: none;
+      background: none;
+
+      .nav__mobile--icon {
+        color: $color-secondary;
+        font-size: 3rem;
+        font-weight: 600;
+
+        &--open {
+          display: none;
+        }
+
+        &--close {
+          display: block;
+        }
+      }
+    }
+    @include respond(tab-port) {
+      display: block;
+    }
+  }
+}
+
+/* Apply this class to your navigation element */
+.sticky-nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: $color-white;
+}
+
+.nav.open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  padding: 2.4rem;
+  background-color: $color-white;
+
+  .nav__container {
+    display: block;
+    position: relative;
+    background-color: $color-secondary;
+    border-radius: $border-radius-default;
+    height: 100%;
+
+    .nav__logo {
+      margin-bottom: 3.2rem;
+    }
+
+    .nav__list {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      align-items: flex-start;
+
+      list-style: none;
+      gap: 2.4rem;
+
+      .nav__item {
+        display: block;
+        width: 100%;
+        order: 2;
+
+        .nav__link:link,
+        .nav__link:visited {
+          text-transform: uppercase;
+          color: $color-white;
+
+          width: 100%;
+          font-size: 2rem;
+          padding: 2.4rem 0;
+          border-bottom: 1px solid rgba($color-white, 0.5);
+
+          transition: all 0.3s;
+        }
+      }
+
+      .nav__seperator {
+        display: none;
+      }
+
+      .nav__lang--box {
+        order: 1;
+
+        .nav__lang {
+          font-size: 1.8rem;
+          color: $color-white;
+        }
+
+        .nav__lang--active {
+          color: $color-primary;
+        }
+      }
+    }
+
+    .nav__mobile {
+      position: absolute;
+      top: 2.4rem;
+      right: 2.4rem;
+      z-index: 99999;
+      .nav__mobile--icon {
+        &--close {
+          display: none;
+        }
+
+        &--open {
+          color: $color-white;
+          display: block;
+        }
+      }
+    }
+  }
+}

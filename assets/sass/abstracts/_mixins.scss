@@ -1,0 +1,36 @@
+@mixin centerAbsolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Note: 1em = 16px
+@mixin respond($breakpoint) {
+  // 600px
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+  // 900px
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  // 1100px
+  @if $breakpoint == tab-port-large {
+    @media only screen and (max-width: 68.75em) {
+      @content;
+    }
+  }
+
+  // 1200px
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      @content;
+    }
+  }
+}

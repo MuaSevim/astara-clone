@@ -1,0 +1,26 @@
+.btn {
+  &:link,
+  &:visited {
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 0.8rem 2.4rem;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: $border-radius-btn;
+  }
+
+  &--primary {
+    color: $color-secondary;
+    background-color: $color-white;
+  }
+
+  &--secondary {
+    color: $color-white;
+    background-color: $color-secondary;
+  }
+
+  &--tertiary {
+    color: $color-secondary;
+    background-color: $color-primary;
+  }
+}
